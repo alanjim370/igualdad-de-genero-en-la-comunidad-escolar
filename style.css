@@ -1,3 +1,4 @@
+```css
 /* =========================================
    CONFIGURACIÓN GENERAL
 ========================================= */
@@ -25,7 +26,7 @@ a {
 }
 
 section {
-    scroll-margin-top: 90px;
+    scroll-margin-top: 100px;
 }
 
 
@@ -35,16 +36,15 @@ section {
 
 .navbar {
     width: 100%;
-    height: 78px;
+    min-height: 78px;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 0 7%;
+    padding: 15px 7%;
 
-    background: rgba(255, 255, 255, 0.92);
-
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
 
     position: sticky;
@@ -72,14 +72,14 @@ section {
 
 .navbar nav {
     display: flex;
-    gap: 25px;
+    gap: 22px;
 }
 
 .navbar nav a {
     font-size: 13px;
     font-weight: 600;
     color: #625d70;
-
+    white-space: nowrap;
     transition: 0.3s;
 }
 
@@ -199,17 +199,12 @@ section {
 
 .btn.primary:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 35px rgba(125, 62, 163, 0.35);
 }
 
 .btn.secondary {
     background: white;
     border: 1px solid #e2d9ed;
     color: #683a82;
-}
-
-.btn.secondary:hover {
-    background: #f4ecfa;
 }
 
 
@@ -230,7 +225,6 @@ section {
 
 .circle {
     position: absolute;
-
     border-radius: 50%;
 }
 
@@ -310,7 +304,7 @@ section {
 
 
 /* =========================================
-   QUOTE
+   FRASE
 ========================================= */
 
 .quote-section {
@@ -321,8 +315,6 @@ section {
     background: #34223e;
 
     color: white;
-
-    position: relative;
 }
 
 .quote-icon {
@@ -330,8 +322,6 @@ section {
     line-height: 50px;
 
     color: #dca7f2;
-
-    opacity: 0.8;
 }
 
 .quote-section p {
@@ -388,7 +378,7 @@ section {
 
 
 /* =========================================
-   QUICK CARDS
+   DATOS RAPIDOS
 ========================================= */
 
 .quick-section {
@@ -473,7 +463,6 @@ section {
 .section-number {
     font-size: 50px;
     font-weight: 800;
-
     color: #e0c9eb;
 }
 
@@ -525,12 +514,11 @@ section {
 
 
 /* =========================================
-   EJEMPLOS EN ESCUELA
+   ESCUELA
 ========================================= */
 
 .school-section {
     padding: 110px 8%;
-
     background: #f9f5fc;
 }
 
@@ -624,24 +612,7 @@ section {
     border: 1px solid #eee7f3;
 
     position: relative;
-
     overflow: hidden;
-}
-
-.benefit::after {
-    content: "";
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    border-radius: 50%;
-
-    background: #f0dff7;
-
-    right: -45px;
-    bottom: -45px;
 }
 
 .benefit > span {
@@ -716,18 +687,13 @@ section {
     background: rgba(255,255,255,0.07);
 
     border: 1px solid rgba(255,255,255,0.08);
-
-    transition: 0.3s;
-}
-
-.problem-item:hover {
-    transform: translateX(8px);
-    background: rgba(255,255,255,0.11);
 }
 
 .problem-item span {
     width: 38px;
     height: 38px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
@@ -753,7 +719,6 @@ section {
 
 .actions-section {
     padding: 110px 8%;
-
     background: #f8f3fb;
 }
 
@@ -850,7 +815,7 @@ section {
 
     border-radius: 50px;
 
-    background: #fff;
+    background: white;
 
     color: #9a4ab7;
 
@@ -881,6 +846,8 @@ section {
 .ods-number {
     width: 300px;
     height: 300px;
+
+    flex-shrink: 0;
 
     border-radius: 35px;
 
@@ -918,7 +885,7 @@ section {
 
 
 /* =========================================
-   SABIAS QUE
+   SABÍAS QUE
 ========================================= */
 
 .didyouknow {
@@ -977,10 +944,6 @@ section {
     color: #d7cbd9;
 }
 
-.didyouknow p strong {
-    color: #e49ce9;
-}
-
 
 /* =========================================
    QUIZ
@@ -988,7 +951,6 @@ section {
 
 .quiz-section {
     padding: 100px 8%;
-
     background: white;
 }
 
@@ -1037,8 +999,6 @@ section {
 
 .quiz-option:hover {
     border-color: #b96bc9;
-
-    transform: translateX(5px);
 }
 
 .quiz-option input {
@@ -1153,7 +1113,6 @@ footer {
 
 footer p {
     color: #c5bac9;
-
     font-size: 13px;
 }
 
@@ -1191,13 +1150,13 @@ footer p {
 
 
 /* =========================================
-   RESPONSIVE - TABLET
+   TABLET
 ========================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
     .navbar {
-        padding: 0 4%;
+        padding: 15px 4%;
     }
 
     .navbar nav {
@@ -1236,27 +1195,35 @@ footer p {
         grid-column: 2;
     }
 
-    .ods-section {
-        padding: 80px 7%;
-    }
-
 }
 
 
 /* =========================================
-   RESPONSIVE - CELULAR
+   TELÉFONOS
 ========================================= */
 
 @media (max-width: 700px) {
 
-    .navbar {
-        height: auto;
+    /* ---------- NAVBAR ---------- */
 
-        padding: 18px 6%;
+    .navbar {
+        min-height: auto;
+
+        padding: 14px 5%;
 
         flex-direction: column;
 
-        gap: 15px;
+        align-items: flex-start;
+
+        gap: 13px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .logo span {
+        font-size: 23px;
     }
 
     .navbar nav {
@@ -1264,18 +1231,32 @@ footer p {
 
         display: flex;
 
+        gap: 18px;
+
         overflow-x: auto;
 
-        padding-bottom: 5px;
+        padding-bottom: 7px;
+
+        scrollbar-width: none;
+    }
+
+    .navbar nav::-webkit-scrollbar {
+        display: none;
     }
 
     .navbar nav a {
-        white-space: nowrap;
+        font-size: 11px;
+
+        flex-shrink: 0;
     }
 
 
+    /* ---------- HERO ---------- */
+
     .hero {
-        padding: 70px 7%;
+        min-height: auto;
+
+        padding: 65px 6% 70px;
 
         flex-direction: column;
 
@@ -1286,128 +1267,545 @@ footer p {
         width: 100%;
     }
 
+    .badge {
+        font-size: 10px;
+
+        padding: 7px 13px;
+
+        margin-bottom: 20px;
+    }
+
     .hero h1 {
-        font-size: 58px;
+        font-size: 52px;
+
+        line-height: 1;
+
+        margin-bottom: 22px;
     }
 
     .hero p {
         font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 28px;
     }
 
     .hero-buttons {
         justify-content: center;
+
+        flex-direction: column;
+
+        align-items: center;
     }
+
+    .btn {
+        width: 100%;
+
+        max-width: 280px;
+
+        padding: 14px 20px;
+    }
+
+
+    /* ---------- HERO VISUAL ---------- */
 
     .hero-visual {
         width: 100%;
 
-        min-height: 350px;
+        min-height: 310px;
 
-        margin-top: 50px;
+        margin-top: 35px;
     }
 
     .circle-one {
-        width: 300px;
-        height: 300px;
+        width: 260px;
+        height: 260px;
+    }
+
+    .circle-two {
+        width: 205px;
+        height: 205px;
+    }
+
+    .students-card {
+        width: 260px;
+
+        padding: 28px 18px;
+
+        border-radius: 25px;
+    }
+
+    .student-icon {
+        width: 52px;
+        height: 52px;
+
+        font-size: 25px;
+    }
+
+    .equal-symbol {
+        font-size: 38px;
+
+        margin: 18px auto 10px;
+    }
+
+    .students-card h3 {
+        font-size: 16px;
     }
 
 
+    /* ---------- FRASE ---------- */
+
     .quote-section {
-        padding: 70px 8%;
+        padding: 65px 8%;
+    }
+
+    .quote-icon {
+        font-size: 70px;
     }
 
     .quote-section p {
-        font-size: 21px;
+        font-size: 20px;
     }
 
+
+    /* ---------- SECCIONES ---------- */
 
     .quick-section,
     .school-section,
     .benefits-section,
     .actions-section,
     .quiz-section {
-        padding: 80px 7%;
+        padding: 75px 6%;
     }
 
-    .quick-grid,
-    .examples-grid,
-    .benefits-grid,
-    .actions-container {
+    .section-title {
+        margin-bottom: 38px;
+    }
+
+    .section-title > span,
+    .section-label {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+    .section-title h2 {
+        font-size: 32px;
+
+        line-height: 1.2;
+    }
+
+    .section-title p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+
+    /* ---------- TARJETAS ---------- */
+
+    .quick-grid {
         grid-template-columns: 1fr;
+
+        gap: 15px;
     }
 
+    .quick-card {
+        padding: 27px 22px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 18px;
+    }
+
+    .card-icon {
+        min-width: 55px;
+
+        width: 55px;
+        height: 55px;
+
+        margin: 0;
+    }
+
+    .quick-card h3 {
+        font-size: 18px;
+    }
+
+    .quick-card p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- QUE ES ---------- */
 
     .content-section {
-        padding: 80px 7%;
+        padding: 75px 6%;
 
         display: block;
     }
 
     .section-number {
-        margin-bottom: 20px;
+        font-size: 38px;
+
+        margin-bottom: 12px;
     }
 
     .content-text h2 {
-        font-size: 35px;
+        font-size: 32px;
+
+        line-height: 1.2;
+
+        margin: 10px 0 20px;
+    }
+
+    .content-text p {
+        font-size: 14px;
+
+        line-height: 1.8;
     }
 
     .definition-card {
         margin-top: 30px;
+
+        padding: 32px 22px;
     }
 
 
-    .problems-section {
-        padding: 80px 7%;
+    /* ---------- ESCUELA ---------- */
 
+    .examples-grid {
         grid-template-columns: 1fr;
 
-        gap: 45px;
+        gap: 15px;
+    }
+
+    .example-card {
+        min-height: auto;
+
+        padding: 25px;
+
+        display: grid;
+
+        grid-template-columns: 55px 1fr;
+
+        column-gap: 15px;
+
+        align-items: center;
+    }
+
+    .example-card > div {
+        font-size: 35px;
+
+        margin: 0;
+
+        grid-row: span 2;
+    }
+
+    .example-card > span {
+        top: 15px;
+        right: 15px;
+    }
+
+    .example-card h3 {
+        font-size: 17px;
+    }
+
+    .example-card p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- BENEFICIOS ---------- */
+
+    .benefits-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .benefit {
+        padding: 27px;
+    }
+
+    .benefit h3 {
+        font-size: 19px;
+    }
+
+
+    /* ---------- PROBLEMAS ---------- */
+
+    .problems-section {
+        padding: 75px 6%;
+
+        display: block;
     }
 
     .problem-intro {
         position: static;
+
+        margin-bottom: 40px;
     }
 
     .problem-intro h2 {
-        font-size: 38px;
+        font-size: 34px;
+
+        line-height: 1.2;
+    }
+
+    .problem-intro p {
+        font-size: 14px;
+    }
+
+    .problem-item {
+        align-items: flex-start;
+
+        padding: 17px;
+
+        gap: 13px;
+    }
+
+    .problem-item span {
+        width: 32px;
+        height: 32px;
+
+        font-size: 10px;
+    }
+
+    .problem-item p {
+        font-size: 13px;
     }
 
 
+    /* ---------- ACCIONES ---------- */
+
+    .actions-container {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .action-card {
+        padding: 23px;
+
+        gap: 15px;
+    }
+
+    .action-number {
+        min-width: 44px;
+
+        width: 44px;
+        height: 44px;
+    }
+
+    .action-card h3 {
+        font-size: 17px;
+    }
+
+    .action-card p {
+        font-size: 13px;
+    }
+
+
+    /* ---------- ODS ---------- */
+
     .ods-section {
-        padding: 80px 7%;
+        padding: 75px 6%;
 
         flex-direction: column;
 
         text-align: center;
+
+        gap: 40px;
+    }
+
+    .ods-content {
+        max-width: 100%;
     }
 
     .ods-content h2 {
-        font-size: 43px;
+        font-size: 40px;
+
+        line-height: 1.1;
+    }
+
+    .ods-content p {
+        font-size: 14px;
     }
 
     .ods-number {
-        width: 240px;
-        height: 240px;
+        width: 220px;
+        height: 220px;
+
+        border-radius: 28px;
+    }
+
+    .ods-number span {
+        font-size: 14px;
     }
 
     .ods-number strong {
-        font-size: 90px;
+        font-size: 80px;
+    }
+
+    .ods-number small {
+        font-size: 10px;
     }
 
 
-    .didyouknow {
-        margin: 70px 7%;
+    /* ---------- SABÍAS QUE ---------- */
 
-        padding: 30px;
+    .didyouknow {
+        margin: 65px 6%;
+
+        padding: 30px 22px;
 
         flex-direction: column;
 
         text-align: center;
+
+        gap: 18px;
+
+        border-radius: 25px;
+    }
+
+    .didyou-icon {
+        min-width: 65px;
+
+        width: 65px;
+        height: 65px;
+
+        font-size: 38px;
+    }
+
+    .didyouknow h2 {
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+    .didyouknow p {
+        font-size: 13px;
+
+        line-height: 1.6;
     }
 
 
+    /* ---------- QUIZ ---------- */
+
+    .quiz-card {
+        padding: 25px 18px;
+
+        border-radius: 22px;
+    }
+
+    .quiz-card h3 {
+        font-size: 17px;
+    }
+
+    .quiz-option {
+        padding: 16px;
+
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+    .answer-message {
+        font-size: 13px;
+    }
+
+
+    /* ---------- FINAL ---------- */
+
     .final-section {
-        padding: 90px 7%;
+        padding: 80px 7%;
+    }
+
+    .final-content > span {
+        font-size: 10px;
+    }
+
+    .final-content h2 {
+        font-size: 38px;
+
+        line-height: 1.15;
+    }
+
+    .final-content p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .final-content h3 {
+        font-size: 16px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        padding: 40px 7%;
+    }
+
+    .footer-logo {
+        font-size: 17px;
+    }
+
+    footer p {
+        font-size: 11px;
+
+        line-height: 1.6;
     }
 
 }
+
+
+/* =========================================
+   TELÉFONOS MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .students-card {
+        width: 235px;
+    }
+
+    .student-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 22px;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .content-text h2 {
+        font-size: 28px;
+    }
+
+    .problem-intro h2 {
+        font-size: 30px;
+    }
+
+    .ods-content h2 {
+        font-size: 34px;
+    }
+
+    .final-content h2 {
+        font-size: 33px;
+    }
+
+}
+```
