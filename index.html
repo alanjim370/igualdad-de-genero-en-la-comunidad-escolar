@@ -566,4 +566,188 @@
 
 <!-- EJERCICIOS -->
 
-<section class="secti
+<section class="section exercises-section" id="ejercicios">
+
+    <div class="section-heading">
+        <span class="tag">PON A PRUEBA TU CRITERIO</span>
+        <h2>Ejercicios interactivos</h2>
+        <p>Responde y comprueba tu aprendizaje.</p>
+    </div>
+
+    <div class="exercise-list">
+
+        <article class="exercise-card">
+            <span class="exercise-number">01</span>
+            <h3>Verdadero o falso</h3>
+
+            <p>
+                La igualdad significa que todas las personas deben
+                tener derechos y oportunidades, además de responsabilidades.
+            </p>
+
+            <div class="exercise-buttons">
+                <button class="tf-button" data-correct="true" data-target="exercise1">Verdadero</button>
+                <button class="tf-button" data-correct="false" data-target="exercise1">Falso</button>
+            </div>
+
+            <p id="exercise1" class="exercise-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="exercise-card">
+            <span class="exercise-number">02</span>
+            <h3>Selecciona el principio</h3>
+
+            <p>
+                Una escuela permite que todos participen en actividades
+                científicas sin importar su género.
+            </p>
+
+            <select id="exerciseSelect">
+                <option value="">Selecciona una respuesta</option>
+                <option value="respeto">Respeto</option>
+                <option value="igualdad">Igualdad de oportunidades</option>
+                <option value="exclusion">Exclusión</option>
+            </select>
+
+            <button id="checkSelect" class="btn btn-primary">
+                Comprobar respuesta
+            </button>
+
+            <p id="exercise2" class="exercise-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="exercise-card">
+            <span class="exercise-number">03</span>
+            <h3>Ordena el procedimiento</h3>
+
+            <p>
+                ¿Cuál es el orden más adecuado para atender
+                un conflicto escolar?
+            </p>
+
+            <select id="orderSelect">
+                <option value="">Selecciona el orden</option>
+                <option value="a">Escuchar → Revisar hechos → Actuar</option>
+                <option value="b">Castigar → Difundir → Investigar</option>
+                <option value="c">Ignorar → Suponer → Decidir</option>
+            </select>
+
+            <button id="checkOrder" class="btn btn-primary">
+                Revisar orden
+            </button>
+
+            <p id="exercise4" class="exercise-feedback" aria-live="polite"></p>
+        </article>
+
+        <article class="exercise-card reflection-card">
+            <span class="exercise-number">04</span>
+            <h3>Tu reflexión</h3>
+
+            <p>
+                ¿Por qué es importante escuchar a las partes
+                antes de determinar responsabilidades?
+            </p>
+
+            <textarea id="reflection" rows="4"
+                placeholder="Escribe tu reflexión..."></textarea>
+
+            <button id="checkReflection" class="btn btn-primary">
+                Revisar reflexión
+            </button>
+
+            <p id="exercise3" class="exercise-feedback" aria-live="polite"></p>
+        </article>
+
+    </div>
+
+</section>
+
+<!-- QUIZ -->
+
+<section class="quiz-section" id="quiz">
+
+    <div class="quiz-container">
+
+        <div class="quiz-heading">
+            <span class="tag">RETO FINAL</span>
+            <h2>Quiz: ¿Cuánto aprendiste?</h2>
+            <p>Responde diez preguntas y conoce tu resultado.</p>
+        </div>
+
+        <div class="quiz-card">
+
+            <div class="quiz-top">
+                <span id="questionNumber">Pregunta 1 de 10</span>
+                <span id="scoreLabel">Puntos: 0</span>
+            </div>
+
+            <div class="quiz-progress">
+                <div id="quizProgress"></div>
+            </div>
+
+            <h3 id="question"></h3>
+
+            <div id="answers" class="answers"></div>
+
+            <p id="quizFeedback" class="quiz-feedback" aria-live="polite"></p>
+
+            <button id="nextQuestion" class="btn btn-primary" hidden>
+                Siguiente pregunta →
+            </button>
+
+            <div id="quizResult" class="quiz-result" hidden>
+                <div class="result-icon">🏆</div>
+                <h3>¡Terminaste el quiz!</h3>
+                <p id="finalScore"></p>
+                <p id="resultMessage"></p>
+
+                <div class="result-meter">
+                    <div id="resultMeterBar"></div>
+                </div>
+
+                <button id="restartQuiz" class="btn btn-primary">
+                    Volver a intentarlo
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONCLUSIONES -->
+
+<section class="closing-section">
+
+    <div class="closing-content">
+        <span class="tag">EL CAMBIO COMIENZA CONTIGO</span>
+
+        <h2>
+            La justicia no tiene género.
+            <span>El respeto tampoco.</span>
+        </h2>
+
+        <p>
+            Construir una sociedad igualitaria significa reconocer
+            los derechos de todas las personas, actuar con responsabilidad
+            y resolver los conflictos mediante el diálogo y la justicia.
+        </p>
+
+        <a href="#inicio" class="btn btn-light">Volver al inicio ↑</a>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    <a href="#inicio" class="logo">EQUI<span>LIBRIO.</span></a>
+    <p>Igualdad · Respeto · Justicia · Inclusión</p>
+    <small>Proyecto educativo | 2026</small>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
