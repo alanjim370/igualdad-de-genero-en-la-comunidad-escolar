@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Equilibrio | Igualdad, derechos y justicia</title>
+    <meta name="description" content="Sitio educativo sobre igualdad, derechos y justicia, con líneas de ayuda, casos, quiz y dinámicas interactivas.">
+    <meta name="theme-color" content="#7654e8">
 
     <link rel="stylesheet" href="style.css">
 
@@ -16,18 +18,35 @@
 
 <body>
 
+<a href="#conceptos" class="skip-link">Saltar al contenido</a>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div class="alert-bar">
+    <span class="pulse-dot" aria-hidden="true"></span>
+    <span>¿Vives o presencias violencia o discriminación? Emergencias: <b>911</b> · Línea de las Mujeres: <b>079, opción 1</b></span>
+    <a href="#ayuda" class="alert-link">Ver líneas de ayuda →</a>
+</div>
+
+
 <header class="navbar">
     <a href="#inicio" class="logo">EQUI<span>LIBRIO.</span></a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Navegación principal">
         <a href="#inicio">Inicio</a>
         <a href="#conceptos">Conceptos</a>
         <a href="#leyes">Derechos</a>
         <a href="#casos">Casos</a>
+        <a href="#mitos">Mitos</a>
+        <a href="#semaforo">Alertas</a>
         <a href="#dinamica">Dinámica</a>
         <a href="#ejercicios">Ejercicios</a>
         <a href="#quiz">Quiz</a>
+        <a href="#compromiso">Compromiso</a>
         <a href="#notas">Notas</a>
+        <a href="#ayuda" class="nav-help">🆘 Ayuda</a>
     </nav>
 </header>
 
@@ -36,6 +55,10 @@
 <!-- PORTADA -->
 
 <section class="hero" id="inicio">
+
+    <div class="hero-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-orb orb-2" aria-hidden="true"></div>
+    <div class="hero-orb orb-3" aria-hidden="true"></div>
 
     <div class="hero-content">
         <span class="tag">RESPETO · EQUIDAD · JUSTICIA</span>
@@ -49,6 +72,8 @@
             Conoce la importancia de los derechos, las responsabilidades
             y el trato justo entre mujeres y hombres.
         </p>
+
+        <p class="hero-rotator">Hoy hablamos de <b id="rotator">respeto</b></p>
 
         <div class="hero-buttons">
             <a href="#conceptos" class="btn btn-primary">Explorar contenido</a>
@@ -83,6 +108,15 @@
         “La justicia debe escuchar los hechos y respetar la dignidad
         de todas las personas.”
     </p>
+</section>
+
+<!-- CIFRAS DEL SITIO -->
+
+<section class="stats-strip" aria-label="Contenido del sitio">
+    <div class="stat"><strong id="statCases" data-count="6">0</strong><span>Casos para analizar</span></div>
+    <div class="stat"><strong id="statMyths" data-count="14">0</strong><span>Mitos y realidades</span></div>
+    <div class="stat"><strong id="statQuiz" data-count="15">0</strong><span>Retos y preguntas</span></div>
+    <div class="stat"><strong id="statHelp" data-count="8">0</strong><span>Líneas de ayuda</span></div>
 </section>
 
 <!-- CONCEPTOS -->
@@ -217,6 +251,208 @@
         No se debe concluir que una ley permite abusos por un caso aislado.
         Para evaluar una norma específica es necesario revisar su texto,
         alcance y aplicación.
+    </div>
+
+</section>
+
+<!-- LÍNEAS DE AYUDA Y CONTACTOS DE EMERGENCIA -->
+
+<section class="section help-section" id="ayuda">
+
+    <div class="section-heading">
+        <span class="tag tag-alert">🆘 AYUDA INMEDIATA</span>
+        <h2>Líneas de ayuda y contactos de emergencia</h2>
+        <p>
+            Si tú o alguien cercano vive violencia o discriminación, no tienes
+            que enfrentarlo a solas. Estas líneas son gratuitas y puedes marcar
+            desde cualquier teléfono. Pedir ayuda es válido y no es tu culpa.
+        </p>
+    </div>
+
+    <div class="safety-bar">
+        <p>
+            <strong>🔒 Tu seguridad primero.</strong>
+            Si alguien puede ver tu pantalla, usa “Salida rápida”
+            (o presiona <kbd>Esc</kbd> dos veces) para salir de esta página al instante.
+        </p>
+        <button type="button" id="quickExit" class="exit-btn">⏏ Salida rápida</button>
+    </div>
+
+    <!-- URGENTES -->
+
+    <div class="help-urgent">
+
+        <a class="urgent-card" href="tel:911">
+            <span class="urgent-label">EMERGENCIAS · 24 HORAS</span>
+            <span class="urgent-num">911</span>
+            <strong>Peligro inmediato</strong>
+            <small>Policía, ambulancia y protección civil. Si no puedes hablar, no cuelgues y mantén la línea abierta.</small>
+            <span class="urgent-cta">📞 Llamar ahora</span>
+        </a>
+
+        <a class="urgent-card" href="tel:079">
+            <span class="urgent-label">MUJERES · 24 HORAS</span>
+            <span class="urgent-num">079<em>opción 1</em></span>
+            <strong>Línea de las Mujeres</strong>
+            <small>Apoyo psicológico, asesoría legal y conexión con refugios u otras instituciones. Gratuita y confidencial.</small>
+            <span class="urgent-cta">📞 Marcar 079 y elegir 1</span>
+        </a>
+
+        <a class="urgent-card" href="tel:089">
+            <span class="urgent-label">DENUNCIA ANÓNIMA</span>
+            <span class="urgent-num">089</span>
+            <strong>Denuncia sin dar tu nombre</strong>
+            <small>Para reportar delitos o situaciones de riesgo de forma anónima.</small>
+            <span class="urgent-cta">📞 Llamar al 089</span>
+        </a>
+
+    </div>
+
+    <!-- FILTROS -->
+
+    <div class="help-tabs" role="tablist" aria-label="Filtrar contactos">
+        <button type="button" class="help-tab active" data-filter="todas">Todos</button>
+        <button type="button" class="help-tab" data-filter="violencia">Violencia</button>
+        <button type="button" class="help-tab" data-filter="discriminacion">Discriminación</button>
+        <button type="button" class="help-tab" data-filter="juridica">Asesoría jurídica</button>
+        <button type="button" class="help-tab" data-filter="emocional">Apoyo emocional</button>
+        <button type="button" class="help-tab" data-filter="local">En Hidalgo y tu escuela</button>
+    </div>
+
+    <div class="help-grid" id="helpGrid">
+
+        <article class="help-card" data-tags="discriminacion juridica">
+            <div class="help-card-top"><span class="help-ico">🛡️</span><span class="help-badge">Gratuita</span></div>
+            <h3>CONAPRED</h3>
+            <p>Orientación jurídica para víctimas o testigos de discriminación y recepción de quejas. Atiende de lunes a jueves de 9:00 a 17:30 h y viernes de 9:00 a 15:00 h.</p>
+            <div class="help-actions">
+                <a class="help-call" href="tel:8005430033">📞 800 543 0033</a>
+                <button type="button" class="copy-btn" data-copy="800 543 0033">Copiar</button>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="violencia discriminacion juridica">
+            <div class="help-card-top"><span class="help-ico">⚖️</span><span class="help-badge">Gratuita</span></div>
+            <h3>CNDH · Comisión Nacional de los Derechos Humanos</h3>
+            <p>Orientación y quejas por presuntas violaciones a derechos humanos, incluidas las cometidas por autoridades.</p>
+            <div class="help-actions">
+                <a class="help-call" href="tel:8007152000">📞 800 715 2000</a>
+                <button type="button" class="copy-btn" data-copy="800 715 2000">Copiar</button>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="violencia juridica">
+            <div class="help-card-top"><span class="help-ico">📋</span><span class="help-badge">Gratuita</span></div>
+            <h3>FGR · Denuncia y Atención Ciudadana</h3>
+            <p>Centro de Denuncia y Atención Ciudadana de la Fiscalía General de la República para orientar sobre cómo presentar una denuncia.</p>
+            <div class="help-actions">
+                <a class="help-call" href="tel:8000085400">📞 800 008 5400</a>
+                <button type="button" class="copy-btn" data-copy="800 008 5400">Copiar</button>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="discriminacion juridica">
+            <div class="help-card-top"><span class="help-ico">💼</span><span class="help-badge">Gratuita</span></div>
+            <h3>PROFEDET · Defensa del trabajo</h3>
+            <p>Asesoría jurídica gratuita si el acoso, la discriminación o el trato injusto ocurren en tu trabajo o prácticas.</p>
+            <div class="help-actions">
+                <a class="help-call" href="tel:8009117877">📞 800 911 7877</a>
+                <button type="button" class="copy-btn" data-copy="800 911 7877">Copiar</button>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="emocional violencia">
+            <div class="help-card-top"><span class="help-ico">💜</span><span class="help-badge">Gratuita</span></div>
+            <h3>Línea de la Vida</h3>
+            <p>Apoyo emocional y orientación en salud mental cuando te sientes abrumada o abrumado, con ansiedad, tristeza o en crisis.</p>
+            <div class="help-actions">
+                <a class="help-call" href="tel:8009112000">📞 800 911 2000</a>
+                <button type="button" class="copy-btn" data-copy="800 911 2000">Copiar</button>
+            </div>
+        </article>
+
+        <!-- LOCALES: sin teléfono fijo para evitar datos desactualizados -->
+
+        <article class="help-card" data-tags="local violencia juridica emocional">
+            <div class="help-card-top"><span class="help-ico">🏛️</span><span class="help-badge badge-local">Hidalgo</span></div>
+            <h3>Centro de Justicia para las Mujeres del Estado de Hidalgo</h3>
+            <p>Concentra en un mismo lugar atención jurídica familiar y penal, trabajo social, atención psicológica y empoderamiento para mujeres víctimas de violencia.</p>
+            <div class="help-actions">
+                <a class="help-search" target="_blank" rel="noopener" href="https://www.google.com/search?q=Centro+de+Justicia+para+las+Mujeres+del+Estado+de+Hidalgo+tel%C3%A9fono">🔎 Ver contacto oficial</a>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="local violencia">
+            <div class="help-card-top"><span class="help-ico">👩‍⚖️</span><span class="help-badge badge-local">Hidalgo</span></div>
+            <h3>Instituto Hidalguense de las Mujeres</h3>
+            <p>Instancia estatal con programas de prevención, orientación y atención para mujeres.</p>
+            <div class="help-actions">
+                <a class="help-search" target="_blank" rel="noopener" href="https://www.google.com/search?q=Instituto+Hidalguense+de+las+Mujeres+contacto">🔎 Ver contacto oficial</a>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="local discriminacion juridica">
+            <div class="help-card-top"><span class="help-ico">🤝</span><span class="help-badge badge-local">Hidalgo</span></div>
+            <h3>Comisión de Derechos Humanos del Estado de Hidalgo</h3>
+            <p>Recibe quejas por violaciones a derechos humanos cometidas por autoridades estatales o municipales y brinda orientación.</p>
+            <div class="help-actions">
+                <a class="help-search" target="_blank" rel="noopener" href="https://www.google.com/search?q=Comisi%C3%B3n+de+Derechos+Humanos+del+Estado+de+Hidalgo+contacto">🔎 Ver contacto oficial</a>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="local violencia juridica">
+            <div class="help-card-top"><span class="help-ico">📝</span><span class="help-badge badge-local">Tu municipio</span></div>
+            <h3>Ministerio Público</h3>
+            <p>Ante el delito (violencia, amenazas, difusión de contenido íntimo, etc.) puedes presentar una denuncia en la agencia del Ministerio Público de tu municipio, acompañada o acompañado de alguien de confianza.</p>
+            <div class="help-actions">
+                <a class="help-search" target="_blank" rel="noopener" href="https://www.google.com/search?q=Ministerio+P%C3%BAblico+Hidalgo+denuncia+violencia+de+g%C3%A9nero">🔎 Buscar la más cercana</a>
+            </div>
+        </article>
+
+        <article class="help-card" data-tags="local violencia discriminacion emocional">
+            <div class="help-card-top"><span class="help-ico">🎓</span><span class="help-badge badge-local">Tu escuela</span></div>
+            <h3>Instancias de tu universidad</h3>
+            <p>Habla con tu tutor o tutora, el área de orientación o psicología, la unidad o comité de género y el órgano de control o ética. Pide por escrito que se activen medidas de protección y que se escuche a las partes.</p>
+            <div class="help-actions">
+                <span class="help-tip">💡 Guarda copia de tu reporte</span>
+            </div>
+        </article>
+
+    </div>
+
+    <!-- RUTAS DE ACCIÓN -->
+
+    <div class="route-wrap">
+
+        <div class="route-head">
+            <span class="tag">RUTAS DE ACCIÓN</span>
+            <h3>¿Qué hago ahora?</h3>
+            <p>Elige tu situación y sigue los pasos. Toca cada paso para marcarlo como hecho.</p>
+        </div>
+
+        <div class="route-picker" role="tablist" aria-label="Elige tu situación">
+            <button type="button" class="route-btn active" data-route="peligro"><span>🚨</span> Estoy en peligro ahora</button>
+            <button type="button" class="route-btn" data-route="violencia"><span>😟</span> Viví o vi violencia o acoso</button>
+            <button type="button" class="route-btn" data-route="discriminacion"><span>⚖️</span> Me discriminaron o trataron injustamente</button>
+            <button type="button" class="route-btn" data-route="ayudar"><span>🤝</span> Quiero ayudar a alguien</button>
+        </div>
+
+        <div class="route-panel" aria-live="polite">
+            <div class="route-top">
+                <h4 id="routeTitle"></h4>
+                <span id="routeCount" class="route-count"></span>
+            </div>
+            <div class="route-progress"><div id="routeBar"></div></div>
+            <ol id="routeSteps" class="route-steps"></ol>
+        </div>
+
+    </div>
+
+    <div class="notice">
+        <strong>Importante:</strong>
+        Esta página es educativa y no sustituye la atención de especialistas ni de las autoridades.
+        Los números pueden cambiar con el tiempo: si una línea no responde,
+        marca el 911 o consulta los sitios oficiales de cada institución.
     </div>
 
 </section>
@@ -634,51 +870,103 @@
 
 <!-- MITOS Y REALIDADES -->
 
-<section class="section myths-section">
+<section class="section myths-section" id="mitos">
 
     <div class="section-heading">
         <span class="tag">PENSAMIENTO CRÍTICO</span>
         <h2>Mitos y realidades</h2>
-        <p>Identifica afirmaciones que requieren análisis.</p>
+        <p>
+            Elige qué quieres ver. Toca cualquier tarjeta para voltearla
+            y descubrir su otra cara.
+        </p>
     </div>
 
-    <div class="myth-grid">
+    <div class="myth-toggle" id="mythToggle" data-mode="mitos" role="group" aria-label="Elegir mitos o realidades">
+        <span class="toggle-thumb" aria-hidden="true"></span>
+        <button type="button" class="toggle-btn active" data-mode="mitos" aria-pressed="true">✕ Mitos</button>
+        <button type="button" class="toggle-btn" data-mode="realidades" aria-pressed="false">✓ Realidades</button>
+    </div>
 
-        <article class="myth-card">
-            <span class="myth-label">MITO</span>
-            <h3>“Solo un género puede sufrir injusticias”.</h3>
-            <p>
-                <b>Realidad:</b> cualquier persona puede experimentar
-                discriminación, trato injusto o violencia.
-            </p>
+    <p class="myth-count" id="mythCount" aria-live="polite"></p>
+
+    <div class="myth-grid" id="mythGrid"></div>
+
+</section>
+
+<!-- SEMÁFORO DE ALERTAS -->
+
+<section class="section semaforo-section" id="semaforo">
+
+    <div class="section-heading">
+        <span class="tag">SEÑALES DE ALERTA</span>
+        <h2>El semáforo de las relaciones</h2>
+        <p>
+            Aplica para parejas, amistades, familia, escuela y trabajo.
+            Toca cada luz para conocer sus señales y marca lo que reconoces.
+        </p>
+    </div>
+
+    <div class="sem-grid">
+
+        <article class="sem-card sem-green" tabindex="0" role="button" aria-expanded="false">
+            <div class="sem-light">🟢</div>
+            <h3>Relación sana</h3>
+            <p class="sem-sub">Respeto y confianza</p>
+            <ul>
+                <li>Puedes decir “no” sin miedo a represalias.</li>
+                <li>Las decisiones se hablan y se toman en conjunto.</li>
+                <li>Se respetan tu privacidad, tus amistades y tu tiempo.</li>
+                <li>Los desacuerdos se resuelven sin gritos ni burlas.</li>
+            </ul>
         </article>
 
-        <article class="myth-card">
-            <span class="myth-label">MITO</span>
-            <h3>“Escuchar a una persona significa creer todo sin revisar”.</h3>
-            <p>
-                <b>Realidad:</b> escuchar con respeto y analizar evidencia
-                son acciones que pueden coexistir.
-            </p>
+        <article class="sem-card sem-yellow" tabindex="0" role="button" aria-expanded="false">
+            <div class="sem-light">🟡</div>
+            <h3>Alerta</h3>
+            <p class="sem-sub">Conductas que no debes normalizar</p>
+            <ul>
+                <li>Bromas que humillan o comparaciones constantes.</li>
+                <li>Celos y reclamos por tus amistades o tus redes.</li>
+                <li>Revisar tu teléfono o exigirte contraseñas.</li>
+                <li>Silencios castigo, culpas (“me haces enojar”).</li>
+            </ul>
         </article>
 
-        <article class="myth-card">
-            <span class="myth-label">MITO</span>
-            <h3>“La igualdad elimina las diferencias”.</h3>
-            <p>
-                <b>Realidad:</b> reconoce la diversidad y busca que
-                las diferencias no sean motivo de discriminación.
-            </p>
+        <article class="sem-card sem-red" tabindex="0" role="button" aria-expanded="false">
+            <div class="sem-light">🔴</div>
+            <h3>Peligro</h3>
+            <p class="sem-sub">Es violencia: busca ayuda</p>
+            <ul>
+                <li>Insultos, amenazas, empujones o golpes.</li>
+                <li>Aislarte, vigilar tu ubicación o controlar tu dinero.</li>
+                <li>Difundir fotos íntimas, rumores o tus secretos.</li>
+                <li>Presionar u obligar a actos sexuales.</li>
+            </ul>
         </article>
 
-        <article class="myth-card">
-            <span class="myth-label">MITO</span>
-            <h3>“Tener derechos significa no tener obligaciones”.</h3>
-            <p>
-                <b>Realidad:</b> la convivencia requiere respetar
-                los derechos de los demás y cumplir acuerdos.
-            </p>
-        </article>
+    </div>
+
+    <div class="sem-check">
+
+        <h3>🔎 Autoevaluación rápida</h3>
+        <p class="sem-note">Marca lo que te ha pasado o has visto en una relación. Nada se guarda ni se envía.</p>
+
+        <div class="sem-items" id="semItems">
+            <label class="sem-item"><input type="checkbox" data-w="1"><span>Me hacen bromas que me hacen sentir mal.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="1"><span>Se enojan si paso tiempo con otras personas.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="1"><span>Revisan mi teléfono o mis redes sin mi permiso.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="1"><span>Me hacen sentir culpable de sus enojos.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="3"><span>Me han insultado, amenazado o golpeado.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="3"><span>Controlan mi dinero, mi ubicación o mis salidas.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="3"><span>Difundieron o amenazaron con difundir fotos o secretos míos.</span></label>
+            <label class="sem-item"><input type="checkbox" data-w="3"><span>Me han presionado u obligado a algo sexual.</span></label>
+        </div>
+
+        <div class="sem-result" id="semResult" aria-live="polite">
+            <p>Marca las opciones que reconozcas para ver una orientación.</p>
+        </div>
+
+        <p class="sem-note">Esta autoevaluación es solo orientativa y no es un diagnóstico.</p>
 
     </div>
 
@@ -891,6 +1179,50 @@
 
 </section>
 
+<!-- COMPROMISO -->
+
+<section class="section pledge-section" id="compromiso">
+
+    <div class="section-heading">
+        <span class="tag">TU PARTE EN EL CAMBIO</span>
+        <h2>Mi compromiso por la igualdad</h2>
+        <p>
+            Elige los compromisos que sí puedes cumplir y genera tu tarjeta
+            personalizada para descargarla y compartirla.
+        </p>
+    </div>
+
+    <div class="pledge-card">
+
+        <form id="pledgeForm" class="pledge-form">
+
+            <label for="pledgeName">Tu nombre o apodo</label>
+            <input id="pledgeName" type="text" maxlength="30" placeholder="Ejemplo: Alan" autocomplete="off">
+
+            <fieldset>
+                <legend>Me comprometo a…</legend>
+
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="Escuchar con respeto y verificar los hechos antes de juzgar."><span>Escuchar con respeto y verificar antes de juzgar.</span></label>
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="No difundir rumores ni contenido íntimo de otras personas."><span>No difundir rumores ni contenido íntimo.</span></label>
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="Repartir tareas y responsabilidades según capacidades, no estereotipos."><span>Repartir tareas sin estereotipos.</span></label>
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="Respetar los límites, la privacidad y las decisiones de los demás."><span>Respetar límites, privacidad y decisiones.</span></label>
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="Cuestionar los chistes y comentarios discriminatorios."><span>Cuestionar chistes y comentarios discriminatorios.</span></label>
+                <label class="pledge-opt"><input type="checkbox" name="pledge" value="Acompañar y orientar a quien pida ayuda sin culparle."><span>Acompañar a quien pida ayuda sin culparle.</span></label>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary">✨ Generar mi tarjeta</button>
+
+        </form>
+
+        <div class="pledge-output" id="pledgeOutput" hidden>
+            <canvas id="pledgeCanvas" width="1080" height="1350" aria-label="Tarjeta de compromiso generada"></canvas>
+            <a id="pledgeDownload" class="btn btn-outline" download="mi-compromiso-equilibrio.png" href="#">⬇ Descargar imagen</a>
+        </div>
+
+    </div>
+
+</section>
+
 <!-- NOTAS Y EXPERIENCIAS -->
 
 <section class="notas-experiencias" id="notas">
@@ -995,7 +1327,13 @@
     <a href="#inicio" class="logo">EQUI<span>LIBRIO.</span></a>
     <p>Igualdad · Respeto · Justicia · Inclusión</p>
     <small>Proyecto educativo | 2026</small>
+    <p class="footer-help">🆘 Emergencias 911 · Línea de las Mujeres 079 (opción 1) · Denuncia anónima 089</p>
 </footer>
+
+<a href="#ayuda" class="sos-fab" aria-label="Ir a líneas de ayuda">🆘 <span>Ayuda</span></a>
+<button type="button" id="backToTop" class="back-top" aria-label="Volver arriba">↑</button>
+
+<noscript><p style="padding:16px;text-align:center">Activa JavaScript para usar las secciones interactivas. Ayuda inmediata: 911 · 079 (opción 1) · 089.</p></noscript>
 
 <script src="script.js"></script>
 
